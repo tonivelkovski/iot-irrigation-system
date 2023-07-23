@@ -1,0 +1,64 @@
+<title>List of Readings</title>
+
+<div class="container-fluid">
+  <h1>List of records from database</h1>
+
+  <div class="row">
+    <div class="left">
+      <label for="pageSizeSelect" style="margin-left: 16px"
+        >Items per Page:&nbsp;&nbsp;</label
+      >
+      <select id="pageSizeSelect">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+  </div>
+  <div id="row">
+    <div class="left">
+      <label for="dateInputDelete">Delete by Date:&nbsp;&nbsp;</label>
+      <input type="date" id="dateInputDelete" />&nbsp;&nbsp;
+      <button id="deleteByDate">Delete</button>
+    </div>
+    <div class="right">
+      <b>Delete all from database:</b> &nbsp;&nbsp;<button id="deleteAllData">
+        Delete all
+      </button>
+    </div>
+  </div>
+</div>
+
+<dialog id="confirmationDialog">
+  <p>Are you sure you want to delete all data?</p>
+  <button id="cancelButton">Cancel</button>
+  <button id="deleteButton">Delete</button>
+</dialog>
+
+<table id="data-table">
+  <thead>
+    <tr>
+      <th>Air Temperature (°C)</th>
+      <th>Air Humidity (%)</th>
+      <th>Tank Water Level (%)</th>
+      <th>Soil Moisture (%)</th>
+      <th>Data Save Time</th>
+    </tr>
+  </thead>
+  <tbody id="data-body"></tbody>
+</table>
+
+<div class="pagination" id="pagination">
+  <a id="prevLink" href="#">Previous</a>
+  <a id="nextLink" href="#">Next</a>
+</div>
+
+<script src="../js/database_list.js"></script>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/style.css" />

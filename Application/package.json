@@ -1,0 +1,19 @@
+{
+  "name": "irrigation-system-management",
+  "version": "1.0.0",
+  "description": "Remote Management of the Irrigation System using Internet of Things",
+  "main": "app.js",
+  "scripts": {
+    "initDB": "cd Database && psql -f Script.sql postgresql://postgres:admin@localhost",
+    "start": "node app.js",
+    "resetDB": "psql -h localhost -p 5432 -U postgres -c 'DROP DATABASE plantdata;",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toni Velkovski",
+  "license": "GPL-2.0-only",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.11.0"
+  }
+}

@@ -1,0 +1,112 @@
+<style>
+  body {
+    overflow: hidden;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Retrieved values:</h1>
+
+      Temperature (°C):
+      <div id="temperature"></div>
+      <br />
+      Humidity (%):
+      <div id="humidity"></div>
+      <br />
+      Tank water level (%):
+      <div id="water-level"></div>
+      <br />
+      Soil moisture (%):
+      <div id="moisture"></div>
+      <br />
+      Save time:
+      <div id="save-time"></div>
+      <br />
+
+      <label for="durationBetweenFetches">Duration between fetches: (seconds)</label>
+      <div>
+        <input
+          type="number"
+          id="durationBetweenFetches"
+          style="vertical-align: middle"
+        />
+        <button
+          id="sendFetchDuration"
+          style="vertical-align: middle; width: 150px"
+        >
+          Send to ESP
+        </button>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h1>Select desired value:</h1>
+
+      <div id="secondDiv">
+        <div>
+          <label for="dateInput" style="vertical-align: middle">Datum:</label>
+          <input
+            type="date"
+            id="dateInput"
+            style="vertical-align: middle; width: 150px"
+          />
+        </div>
+        <div>
+          <label for="dataSelect" style="vertical-align: middle">Data:</label>
+          <select id="dataSelect" style="vertical-align: middle; width: 150px">
+            <option value="tank_water_level">Tank water level</option>
+            <option value="soil_moisture">Soil moisture</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="thirdDiv">
+        <button id="bestData" style="width: 100px">Best data</button>
+        <button id="worstData" style="width: 100px">Worst data</button>
+      </div>
+
+      <div id="resultContainer"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <div id="buttons">
+      <button id="turnOn">Turn on water pump</button>
+      <button id="turnOff">Turn off water pump</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color green"></div>
+        <span> > 60% - system does not need anything</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color yellow"></div>
+        <span>
+          30% - 60% - check system, maybe turn on water pump if want to</span
+        >
+      </div>
+      <div class="legend-item">
+        <div class="legend-color red"></div>
+        <span> < 30% - necessary to intervene and turn on the water pump</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/index.js"></script>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/style.css" />
